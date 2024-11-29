@@ -52,6 +52,9 @@ Evaluate the performance of the portfolio post-shock and re-optimize it if neces
 Main Results: The main results, figures, and tables will be generated as part of the notebook execution.
 Re-Optimization: Use the post-shock data to rerun the Markowitz optimization and compare the newly optimized portfolio with the original one.
 
+**Use of branches**
+NB: You will have to work only with the `Dev` branch. DO NOT MERGE directly to the `main` branch. Since we are using a free version of github, there is a missing feature of locking a `main` branch from merges and pushes directly (except for the admins of the repo). All direct PRs to `main` from other branches except for `dev` will be discarded. 
+
 **Data**
 The data used in this project comes from publicly available sources like Yahoo Finance, accessible through the yfinance library. The notebook provides instructions to automatically download the required stock prices.
 
