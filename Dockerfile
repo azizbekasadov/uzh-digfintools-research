@@ -17,9 +17,8 @@
 
 # # Command to run when starting the container
 # CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
-
 # Start from a base image with Jupyter and Python support
-FROM jupyter/scipy-notebook:python-3.12.4
+FROM jupyter/scipy-notebook:python-3.10.8
 
 # Set environment variables
 ENV JUPYTER_ENABLE_LAB=no
@@ -30,8 +29,14 @@ WORKDIR /app
 # Copy only the requirements.txt file first for dependency installation
 COPY requirements.txt /app/requirements.txt
 
-# Install dependencies
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Install LaTeX distribution for compiling presentations and reports
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    texlive-full \
+    latexmk \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Copy the entire project into the container
 COPY . /app
