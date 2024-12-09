@@ -1,7 +1,0 @@
-yfinance
-pandas
-numpy
-matplotlib-inline
-matplotlib
-seaborn
-cvxopt
