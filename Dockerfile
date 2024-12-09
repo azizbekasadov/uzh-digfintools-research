@@ -33,10 +33,7 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Install LaTeX distribution for compiling presentations and reports
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    texlive-full \
-    latexmk \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends \ texlive-full \ latexmk \ && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Compilation of the latex files for presentation and report
 RUN report report.tex && bibtex report && presentation presentation.tex && presentation presentation.tex
