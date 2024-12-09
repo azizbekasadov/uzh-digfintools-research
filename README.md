@@ -58,6 +58,12 @@ NB: You will have to work only with the `Dev` branch. DO NOT MERGE directly to t
 **Data**
 The data used in this project comes from publicly available sources like Yahoo Finance, accessible through the yfinance library. The notebook provides instructions to automatically download the required stock prices.
 
+**Docker**
+deploy docker on the container and install volume
+use commands:
+docker build -t main .
+docker run -p 8888:8888 main
+
 **Conclusion**
 This research highlights the vulnerability of traditionally optimized portfolios in the face of unexpected market shocks. The results stress the importance of dynamically updating portfolio allocations and incorporating scenario analysis in investment strategies.
    
