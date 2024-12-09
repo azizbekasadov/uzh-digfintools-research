@@ -38,6 +38,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     latexmk \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Compilation of the latex files for presentation and report
+RUN report report.tex && bibtex report && presentation presentation.tex && presentation presentation.tex
+
 # Copy the entire project into the container
 COPY . /app
 
