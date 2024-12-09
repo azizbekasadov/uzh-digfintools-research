@@ -6,7 +6,7 @@
 **Clone Your GitHub Repository:** Clone your repository locally or ensure the Dockerfile is accessible.
 
 **Project Structure**
-
+```
 project/
 │
 ├── Dockerfile
@@ -16,6 +16,7 @@ project/
 │   ├── main.ipynb
 │
 └── resources/
+```
 
 ### Build and Run the Docker Container
 
