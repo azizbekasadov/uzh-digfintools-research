@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project examines the effects of market shocks on a Markowitz-optimized portfolio. The Markowitz model, or mean-variance optimization, is a foundational approach to portfolio selection that aims to maximize returns for a given level of risk. However, it is based on historical data and assumes market conditions remain stable over time. This research investigates how sudden market events—commonly referred to as "market shocks"—disrupt the performance of an optimized portfolio.
+This project examines the effects of market shocks on a Markowitz-optimized portfolio. The Markowitz model, or mean-variance optimization, is a foundational approach to portfolio selection that aims to maximize returns for a given level of risk. It assumes that market conditions remain stable over time. This research investigates how sudden market events—commonly referred to as "market shocks" affects the performance of optimized portfolios.
 
 ### Main Findings:
 - **Market shocks** significantly alter the risk-return dynamics, often resulting in suboptimal performance of the portfolio initially designed under normal conditions.
