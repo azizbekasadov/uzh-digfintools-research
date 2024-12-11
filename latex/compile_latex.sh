@@ -1,5 +1,5 @@
 #!/bin/bash
-pdflatex presentation.tex
-bibtex presentation
+pdflatex presentation/presentation.tex
+bibtex presentation/presentation
 pdflatex report.tex
 bibtex report
