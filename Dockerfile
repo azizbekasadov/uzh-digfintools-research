@@ -24,16 +24,14 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Compilation of the LaTeX files for presentation and report
-# (Assuming `report.tex` and `presentation.tex` are in the project directory)
-RUN latexmk -pdf /app/report.tex && bibtex /app/report \
-    && latexmk -pdf /app/presentation.tex
-
 # Copy the entire project into the container
 COPY . /app
 
 # Set the working directory to the src folder
 WORKDIR /app/src
+
+# Provide a script to compile LaTeX files dynamically at runtime
+RUN echo '#!/bin/bash\nlatexmk -pdf /app/latex/report/main.tex && bibtex /app/latex/report/main\nlatexmk -pdf /app/latex/presentation/main.tex && bibtex /app/latex/presentation/main' > /app/compile_tex.sh && chmod +x /app/compile_tex.sh
 
 # Switch back to the original user for security
 USER ${NB_UID}
