@@ -45,11 +45,9 @@ To reproduce the results presented in this study, you will need to set up a Jupy
    ```
 In the notebook, follow the steps to:
 
-Build a Markowitz-optimized portfolio using historical data.
-Simulate market shocks based on predefined or random events (e.g., price crashes, volatility spikes).
-Evaluate the performance of the portfolio post-shock and re-optimize it if necessary.
-Main Results: The main results, figures, and tables will be generated as part of the notebook execution.
-Re-Optimization: Use the post-shock data to rerun the Markowitz optimization and compare the newly optimized portfolio with the original one.
+Build Markowitz-optimized portfolios using historical data.
+Evaluate the performance of the portfolios and of the benchmark.
+Main Results: The main results, figures, and tables should be generated as part of the notebook execution.
 
 **Use of branches**
 NB: You will have to work only with the `Dev` branch. DO NOT MERGE directly to the `main` branch. Since we are using a free version of github, there is a missing feature of locking a `main` branch from merges and pushes directly (except for the admins of the repo). All direct PRs to `main` from other branches except for `dev` will be discarded. 
@@ -64,5 +62,5 @@ docker build -t main .
 docker run -p 8888:8888 main
 
 **Conclusion**
-This research highlights the vulnerability of traditionally optimized portfolios in the face of unexpected market shocks. The results stress the importance of dynamically updating portfolio allocations and incorporating scenario analysis in investment strategies.
+This research highlights the vulnerability of traditionally optimized portfolios in the face of unexpected market shocks. The results stress the importance of taking into consideration alternative financial instruments in portfolio construction during times of market distress.
    
