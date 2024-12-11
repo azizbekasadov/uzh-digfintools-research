@@ -5,14 +5,13 @@
 This project examines the effects of market shocks on a Markowitz-optimized portfolio. The Markowitz model, or mean-variance optimization, is a foundational approach to portfolio selection that aims to maximize returns for a given level of risk. It assumes that market conditions remain stable over time. This research investigates how sudden market events—commonly referred to as "market shocks" affects the performance of optimized portfolios.
 
 ### Main Findings:
-- **Market shocks** significantly alter the risk-return dynamics, often resulting in suboptimal performance of the portfolio initially designed under normal conditions.
-- A **re-optimization post-shock** can partially mitigate losses, though the extent of recovery varies depending on the nature and magnitude of the shock.
-- The study demonstrates the importance of incorporating **stress testing** and **shock scenarios** when using Markowitz optimization in volatile markets.
+- None of the analysed models (neither the minimum variance strategy nor maximum Sharpe strategy) consistently derive stable positive results when compared using key metrics (returns, volatilities and Sharpe ratios).
+- Each model exhibits trade-offs in performance, further confirming the difficulty of managing portfolios of large-cap stocks in times of market distress.
+- The maximum Sharpe ratio strategy generated higher returns and higher Sharpe ratios, however at the cost of increased volatility.
+- The minimum variance portfolio achieved on average the lowest volatility, however it also generated mostly negative retuns.
+- Outperforming the benchmark - the equally weighted portfolio - proved to be challenging also in course of market turbulence.
+- Inclusion of alternative financial instruments such as commodity derivated may result in improved portfolio performance, especially during market distress.
 
-### Key Figure:
-The main figure in this study highlights the comparative performance of a portfolio before and after a significant market shock (e.g., a financial crisis, sudden interest rate change). The chart compares the efficient frontiers under normal and shock conditions, illustrating the shift in optimal risk-return trade-offs.
-
----
 
 ## Reproducing the Findings
 
