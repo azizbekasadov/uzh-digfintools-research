@@ -2,17 +2,16 @@
 
 ## Project Overview
 
-This project examines the effects of market shocks on a Markowitz-optimized portfolio. The Markowitz model, or mean-variance optimization, is a foundational approach to portfolio selection that aims to maximize returns for a given level of risk. However, it is based on historical data and assumes market conditions remain stable over time. This research investigates how sudden market events—commonly referred to as "market shocks"—disrupt the performance of an optimized portfolio.
+This project examines the effects of market shocks on a Markowitz-optimized portfolio. The Markowitz model, or mean-variance optimization, is a foundational approach to portfolio selection that aims to maximize returns for a given level of risk. It assumes that market conditions remain stable over time. This research investigates how sudden market events—commonly referred to as "market shocks" affects the performance of optimized portfolios.
 
 ### Main Findings:
-- **Market shocks** significantly alter the risk-return dynamics, often resulting in suboptimal performance of the portfolio initially designed under normal conditions.
-- A **re-optimization post-shock** can partially mitigate losses, though the extent of recovery varies depending on the nature and magnitude of the shock.
-- The study demonstrates the importance of incorporating **stress testing** and **shock scenarios** when using Markowitz optimization in volatile markets.
+- None of the analysed models (neither the minimum variance strategy nor maximum Sharpe strategy) consistently derive stable positive results when compared using key metrics (returns, volatilities and Sharpe ratios).
+- Each model exhibits trade-offs in performance, further confirming the difficulty of managing portfolios of large-cap stocks in times of market distress.
+- The maximum Sharpe ratio strategy generated higher returns and higher Sharpe ratios, however at the cost of increased volatility.
+- The minimum variance portfolio achieved on average the lowest volatility, however it also generated mostly negative retuns.
+- Outperforming the benchmark - the equally weighted portfolio - proved to be challenging also in course of market turbulence.
+- Inclusion of alternative financial instruments such as commodity derivated may result in improved portfolio performance, especially during market distress.
 
-### Key Figure:
-The main figure in this study highlights the comparative performance of a portfolio before and after a significant market shock (e.g., a financial crisis, sudden interest rate change). The chart compares the efficient frontiers under normal and shock conditions, illustrating the shift in optimal risk-return trade-offs.
-
----
 
 ## Reproducing the Findings
 
@@ -46,11 +45,9 @@ To reproduce the results presented in this study, you will need to set up a Jupy
    ```
 In the notebook, follow the steps to:
 
-Build a Markowitz-optimized portfolio using historical data.
-Simulate market shocks based on predefined or random events (e.g., price crashes, volatility spikes).
-Evaluate the performance of the portfolio post-shock and re-optimize it if necessary.
-Main Results: The main results, figures, and tables will be generated as part of the notebook execution.
-Re-Optimization: Use the post-shock data to rerun the Markowitz optimization and compare the newly optimized portfolio with the original one.
+Build Markowitz-optimized portfolios using historical data.
+Evaluate the performance of the portfolios and of the benchmark.
+Main Results: The main results, figures, and tables should be generated as part of the notebook execution.
 
 **Use of branches**
 NB: You will have to work only with the `Dev` branch. DO NOT MERGE directly to the `main` branch. Since we are using a free version of github, there is a missing feature of locking a `main` branch from merges and pushes directly (except for the admins of the repo). All direct PRs to `main` from other branches except for `dev` will be discarded. 
@@ -65,5 +62,5 @@ docker build -t main .
 docker run -p 8888:8888 main
 
 **Conclusion**
-This research highlights the vulnerability of traditionally optimized portfolios in the face of unexpected market shocks. The results stress the importance of dynamically updating portfolio allocations and incorporating scenario analysis in investment strategies.
+This research highlights the vulnerability of traditionally optimized portfolios in the face of unexpected market shocks. The results stress the importance of taking into consideration alternative financial instruments in portfolio construction during times of market distress.
    
