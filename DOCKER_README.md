@@ -14,6 +14,13 @@ project/
 ├── Makefile
 ├── src/
 │   ├── main.ipynb
+├── latex/
+|   ├── presentation/
+|   |   ├── main.tex
+|   |   ├── references.bib
+|   ├── report/
+|   |   ├── main.tex
+|   |   ├── references.bib
 │
 └── resources/
 ```
@@ -23,12 +30,12 @@ project/
 **Step 1: Build the Docker Image**
 Navigate to your project directory in the terminal and run:
 ```
-docker build -t uzh-digfintools-research
+docker build -t dtffprojectjn
 ```
 **Step 2: Run the Docker Container**
 Run the container and map the ports:
 ```
-docker run -p 8888:8888 my-jupyter-project
+docker run -p 8888:8888 dtffprojectjn
 ```
 **Step 3: Access the Jupyter Notebook**
 Once the container is running, look for a URL in the terminal output, such as:

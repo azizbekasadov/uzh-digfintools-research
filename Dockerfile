@@ -27,11 +27,17 @@ RUN apt-get update \
 # Copy the entire project into the container
 COPY . /app
 
-# Set the working directory to the src folder
-WORKDIR /app/src
+# Set the working directory to the latex folder
+WORKDIR /app/latex
 
-# Provide a script to compile LaTeX files dynamically at runtime
-RUN echo '#!/bin/bash\nlatexmk -pdf /app/latex/report/main.tex && bibtex /app/latex/report/main\nlatexmk -pdf /app/latex/presentation/main.tex && bibtex /app/latex/presentation/main' > /app/compile_tex.sh && chmod +x /app/compile_tex.sh
+# Provide a shell script to compile LaTeX files dynamically
+RUN echo '#!/bin/bash\n'\
+'for texfile in "$@"; do\n'\
+'  echo "Compiling $texfile...";\n'\
+'  latexmk -pdf -interaction=nonstopmode "$texfile";\n'\
+'  bibtex "${texfile%.tex}";\n'\
+'  latexmk -pdf -interaction=nonstopmode "$texfile";\n'\
+'done' > /usr/local/bin/compile_tex.sh && chmod +x /usr/local/bin/compile_tex.sh
 
 # Switch back to the original user for security
 USER ${NB_UID}
