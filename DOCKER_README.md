@@ -30,7 +30,7 @@ project/
 **Step 1: Build the Docker Image**
 Navigate to your project directory in the terminal and run:
 ```
-docker build -t dtffprojectjn
+docker build -t dtffprojectjn .
 ```
 **Step 2: Run the Docker Container**
 Run the container and map the ports:

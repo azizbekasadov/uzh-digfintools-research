@@ -12,7 +12,7 @@ docker run -it --rm -v $(pwd):/app latex-compiler bash
 
 ### Compile LaTeX Files Inside the Container:
 ```
-/latex/compile_tex.sh
+/latex/compile_latex.sh
 ```
 ### Verify Outputs:
 The compiled PDFs will be available in the latex/report and latex/presentation directories on the host machine.
