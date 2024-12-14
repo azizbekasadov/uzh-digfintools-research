@@ -28,13 +28,13 @@ RUN apt-get update \
 COPY . /app
 COPY main.ipynb /app/main.ipynb
 
-
 # Copy the compile_notebook.sh script into the container
 COPY compile_notebook.sh /usr/local/bin/compile_notebook.sh
+# COPY compile_latex.sh /usr/local/bin/compile_latex.sh
 
 # Ensure the script is executable
 RUN chmod +x /usr/local/bin/compile_notebook.sh
-
+# RUN chmod +x /usr/local/bin/compile_latex.sh
 
 # Provide a shell script to compile LaTeX files dynamically
 RUN echo '#!/bin/bash\n'\
