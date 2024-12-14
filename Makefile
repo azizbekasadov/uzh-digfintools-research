@@ -15,9 +15,9 @@ run:
 execute-notebook:
 	@docker run --rm -v $(PWD):/app $(IMAGE_NAME) bash -c "jupyter nbconvert --to notebook --execute /app/$(SRC_NOTEBOOK) --output /app/$(OUTPUT_NOTEBOOK)"
 
-stop:
-	@docker ps -a -q --filter "name=$(CONTAINER_NAME)" | xargs -r docker stop
-	@docker ps -a -q --filter "name=$(CONTAINER_NAME)" | xargs -r docker rm
+#stop:
+#	@docker ps -a -q --filter "name=$(CONTAINER_NAME)" | xargs -r docker stop
+#	@docker ps -a -q --filter "name=$(CONTAINER_NAME)" | xargs -r docker rm
 
 clean:
 	-docker rmi $(IMAGE_NAME)

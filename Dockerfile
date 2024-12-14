@@ -26,9 +26,15 @@ RUN apt-get update \
 
 # Copy the entire project into the container
 COPY . /app
+COPY main.ipynb /app/main.ipynb
 
-# Set the working directory to the latex folder
-WORKDIR /app/latex
+
+# Copy the compile_notebook.sh script into the container
+COPY compile_notebook.sh /usr/local/bin/compile_notebook.sh
+
+# Ensure the script is executable
+RUN chmod +x /usr/local/bin/compile_notebook.sh
+
 
 # Provide a shell script to compile LaTeX files dynamically
 RUN echo '#!/bin/bash\n'\
@@ -46,4 +52,4 @@ USER ${NB_UID}
 EXPOSE 8888
 
 # Command to run when starting the container
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+CMD ["/bin/bash", "-c", "/usr/local/bin/compile_notebook.sh && /opt/conda/bin/jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"]
