@@ -14,3 +14,10 @@ To access the notebook, open this file in a browser:
         http://d4e80ad6054a:8888/?token=b484c8dd59691142181cfab56224aec4bfb407151cf67f7a
      or http://127.0.0.1:8888/?token=b484c8dd59691142181cfab56224aec4bfb407151cf67f7a
 ```
+
+In case of having any issues with `make run` command, use 
+
+```
+docker build -t dtffprojectjn .
+docker run -it --rm --name dtff-project-jn-container -p 10000:8888 -v $(pwd):/app dtffprojectjn
+```
